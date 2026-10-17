@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Web Content Optimizer
+
+Optimize images and text for many different web use cases. Web Content Optimizer transforms large, high-resolution images to smaller versions for faster loading and makes sure your text fit the intended use optimally.
+
+## Overview
+
+Web Content Optimizer makes it easy for you to turn images and text into web-ready versions using recommendations for file size and character count.
+
+## Table of contents
+
+- [Features](#features)
+- [Getting Started](#getting-started)
+- [Project structure](#project-structure)
+- [License & Author](#license--author)
+
+## Features
+
+### Images
+- **Files & URLs:** Load images stored locally or online.
+- **Size limit:** Set a maximum file size in KB.
+- **Resizing:** Set the output width in pixels.
+- **Sensible defaults:** Width 1200 px and max size 400 KB unless you say otherwise.
+
+### Text
+- **Meta title:** Make sure your meta title is the correct length
+- **Meta description:** Make sure your meta description is the correct length
 
 ## Getting Started
+
+### Prerequisites
+
+**Node.js** version 24.12.0 or later (see `engines` in `package.json`).
+
+### Installation
+
+```bash
+npm install
+```
+
+### Run the app
 
 First, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to test out the app.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```text
+wco-seo-dashboard
+├─ app                                # Pages & layouts
+├─ components                         # Reusable components
+├─ lib
+│  └─ issues
+│     └─ fetch-issues.ts              # Fetches from Ahrefs or sample data
+│     └─ sync-issues.ts               # Maps and writes issues to MongoDB
+│     └─ index.ts                     # fetchAndSync — ties fetch and sync together
+│  ├─ mongodb.ts                      # Database config
+│  ├─ sample
+│  │  └─ ahref-issues.json            # Ahref JSON sample data
+│  ├─ scheduler.ts                    # node-cron weekly job
+│  ├─ seo-score.ts                    # Calculates task weight
+│  └─ utils.ts                        # Helper functions
+├── public                            # Public resources
+├── package.json                      # Scripts and dependencies
+├── tsconfig.json             # TypeScript config (strict mode)
+├── TEST_REPORT.md                    # Test report
+└── LICENSE                           # Unlicense (public domain)
+```
 
-## Learn More
+## License & Author
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project was created by Lowe Smed during the course Introduction to software quality (1DV610) as part of the program Web Development Programme at Linneuniversitetet 2026 and is released into the public domain under the [**Unlicense**](https://unlicense.org). You are free to copy, modify, publish, and distribute this boilerplate code in any way you see fit without any restrictions.
