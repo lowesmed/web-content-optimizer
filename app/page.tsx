@@ -1,4 +1,5 @@
 import ImageSelectionForm from "@/components/image-selection-form";
+import MetaTitleField from "@/components/meta-title-field";
 
 export default function Home() {
   return (
@@ -10,7 +11,10 @@ export default function Home() {
           <li>Create SEO optimized meta titles for webpages</li>
         </ul>
       <p className="text-sm">More features are being added frequently.</p>
+      <h2 className="text-2xl font-bold">Images</h2>
       <ImageSelectionForm />
+      <h2 className="text-2xl font-bold">Text</h2>
+      <MetaTitleField />
     </div>
   );
 }
