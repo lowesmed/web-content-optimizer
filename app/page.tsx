@@ -7,8 +7,8 @@ export default function Home() {
       <h1 className="text-3xl font-bold">Web Content Optimizer</h1>
       <p>This app helps you create optimized images and text for different web usage. You can:</p>
         <ul>
-          <li>Make images smaller in file size and dimension</li>
-          <li>Create SEO optimized meta titles for webpages</li>
+          <li>• Make images smaller in file size and dimension</li>
+          <li>• Create SEO optimized meta titles for webpages</li>
         </ul>
       <p className="text-sm">More features are being added frequently.</p>
       <h2 className="text-2xl font-bold">Images</h2>
