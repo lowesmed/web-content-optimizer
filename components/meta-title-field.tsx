@@ -6,7 +6,7 @@ export default function MetaTitleField() {
   const [text, setText] = useState("");
   const maxCharacters = 60;
 
-  const characters = useMemo(() => new TextLengthChecker().check(text), [text])
+  const lengthCheck = useMemo(() => new TextLengthChecker().check(text), [text])
 
   return (
     <div className="flex flex-col gap-3">
@@ -22,8 +22,8 @@ export default function MetaTitleField() {
         className="py-2 px-4 rounded-full border border-solid  transition-colors hover:b"
       />
       <p className="text-sm">
-        {characters} / {maxCharacters} characters
-        {/* {characters > maxCharacters && " - to long"} */}
+        {lengthCheck.characters} / {maxCharacters} characters
+        {lengthCheck.characters > maxCharacters && " " + lengthCheck.status}
       </p>
     </div>
   );

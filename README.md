@@ -63,23 +63,14 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to test ou
 ## Project Structure
 
 ```text
-wco-seo-dashboard
+web-content-optimizer
 ├─ app                                # Pages & layouts
 ├─ components                         # Reusable components
-├─ lib
-│  └─ issues
-│     └─ fetch-issues.ts              # Fetches from Ahrefs or sample data
-│     └─ sync-issues.ts               # Maps and writes issues to MongoDB
-│     └─ index.ts                     # fetchAndSync — ties fetch and sync together
-│  ├─ mongodb.ts                      # Database config
-│  ├─ sample
-│  │  └─ ahref-issues.json            # Ahref JSON sample data
-│  ├─ scheduler.ts                    # node-cron weekly job
-│  ├─ seo-score.ts                    # Calculates task weight
-│  └─ utils.ts                        # Helper functions
 ├── public                            # Public resources
+├─  services                          # App logic using the modules
 ├── package.json                      # Scripts and dependencies
-├── tsconfig.json             # TypeScript config (strict mode)
+├── tsconfig.json                     # TypeScript config (strict mode)
+├── vitest.config.mts                 # Vitest tests config
 ├── TEST_REPORT.md                    # Test report
 └── LICENSE                           # Unlicense (public domain)
 ```
