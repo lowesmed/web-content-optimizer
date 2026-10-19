@@ -13,8 +13,8 @@ Web Content Optimizer makes it easy for you to turn images and text into web-rea
 - R1.2 Choose max file size of compressed image
 
 #### Text
-- R2.1 Create not to long meta titles
-- R2.1 Create not to long meta descriptions
+- R2.1 Create not to long meta titles (max 60 characters)
+- R2.2 Create not to long meta descriptions (max 160 characters)
 
 ## Table of contents
 
