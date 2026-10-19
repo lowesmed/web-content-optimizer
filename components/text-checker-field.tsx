@@ -1,16 +1,20 @@
 "use client"
 import { TextLengthChecker } from "@/services/TextLengthChecker";
+import { TextKind } from "@/domain/TextKindCatalog";
 import { useMemo, useState } from "react";
 
-export default function MetaTitleField() {
-  const [text, setText] = useState("");
-  const maxCharacters = 60;
+interface MetaTitleFieldProps {
+  textKind: TextKind;
+}
 
-  const lengthCheck = useMemo(() => new TextLengthChecker().check(text), [text])
+export default function TextCheckerField({ textKind }: MetaTitleFieldProps) {
+  const [text, setText] = useState("");
+
+  const lengthCheck = useMemo(() => new TextLengthChecker(textKind).check(text), [textKind, text])
 
   return (
     <div className="flex flex-col gap-3">
-      <h3>Meta title</h3>
+      <h3>{textKind.label || "Text to optimize"}</h3>
       <input
         type="text"
         name="metaTitleText"
@@ -22,7 +26,7 @@ export default function MetaTitleField() {
         className="py-2 px-4 rounded-full border border-solid  transition-colors hover:b"
       />
       <p className="text-sm">
-        {lengthCheck.characters} / {maxCharacters} characters { " | " + lengthCheck.status}
+        {lengthCheck.characters} / {textKind.maxCharacters} characters { " | " + lengthCheck.status}
       </p>
     </div>
   );

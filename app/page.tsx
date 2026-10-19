@@ -1,7 +1,11 @@
 import ImageSelectionForm from "@/components/image-selection-form";
-import MetaTitleField from "@/components/meta-title-field";
+import TextCheckerField from "@/components/text-checker-field";
+import { TextKindCatalog } from "@/domain/TextKindCatalog";
 
 export default function Home() {
+
+  const textKindCatalog = new TextKindCatalog()
+
   return (
     <div className="flex flex-col gap-6">
       <h1 className="text-3xl font-bold">Web Content Optimizer</h1>
@@ -14,7 +18,8 @@ export default function Home() {
       <h2 className="text-2xl font-bold">Images</h2>
       <ImageSelectionForm />
       <h2 className="text-2xl font-bold">Text</h2>
-      <MetaTitleField />
+      <TextCheckerField textKind={textKindCatalog.find("meta-title")}/>
+      <TextCheckerField textKind={textKindCatalog.find("meta-description")}/>
     </div>
   );
 }
