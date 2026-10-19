@@ -15,6 +15,9 @@ Web Content Optimizer makes it easy for you to turn images and text into web-rea
 #### Text
 - R2.1 Create not to long meta titles (max 60 characters)
 - R2.2 Create not to long meta descriptions (max 160 characters)
+- R2.3 Create optimizes page heading (H1)
+  - 20-70 characters
+  - Includes page name
 
 ## Table of contents
 
