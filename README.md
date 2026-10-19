@@ -9,13 +9,16 @@ Web Content Optimizer makes it easy for you to turn images and text into web-rea
 ### User Requirements
 
 #### Images
-- R1.1 Select an image from url
+- R1.1 Select a jpeg image from a valid url
 - R1.2 Choose max file size of compressed image
+- R1.2 Possibility to download the compressed image
 
 #### Text
-- R2.1 Create not to long meta titles (max 60 characters)
-- R2.2 Create not to long meta descriptions (max 160 characters)
-- R2.3 Create optimizes page heading (H1)
+- R2.1 Create a not to long meta title (max 60 characters)
+  - Get feedback when too short/ok/too long
+- R2.2 Create a not to long meta description (max 160 characters)
+  - Get feedback when too short/ok/too long
+- R2.3 Create a optimized page heading (H1)
   - 20-70 characters
   - Includes page name
 
