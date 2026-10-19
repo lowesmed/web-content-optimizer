@@ -6,6 +6,16 @@ Optimize images and text for many different web use cases. Web Content Optimizer
 
 Web Content Optimizer makes it easy for you to turn images and text into web-ready versions using recommendations for file size and character count.
 
+### User Requirements
+
+#### Images
+- R1.1 Select an image from url
+- R1.2 Choose max file size of compressed image
+
+#### Text
+- R2.1 Create not to long meta titles
+- R2.1 Create not to long meta descriptions
+
 ## Table of contents
 
 - [Features](#features)
