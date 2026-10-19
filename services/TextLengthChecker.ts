@@ -1,9 +1,9 @@
 import { TextCounter } from "glyphalyze";
 
 /**
- * Types of statuses for text length
+ * Types of statuses for text length.
  */
-export type LengthStatus = "ok" | "too-short" | "too-long"
+export type LengthStatus = "👍 ok" | "⚠️ too-short" | "⚠️ too-long"
 
 export interface LengthCheck {
   characters: number
@@ -12,13 +12,13 @@ export interface LengthCheck {
 
 export class TextLengthChecker {
   /**
-   * Maximum number of characters
+   * Maximum number of characters.
    */
-  private maxCharacters = 30;
+  private maxCharacters = 60;
   /**
-   * Minimum number of characters
+   * Minimum number of characters.
    */
-  private minCharacters = 12;
+  private minCharacters = 30;
 
   constructor() {}
 
@@ -39,11 +39,11 @@ export class TextLengthChecker {
    */
   private getStatus(characters: number): LengthStatus {
     if(characters < this.minCharacters) {
-      return "too-short";
+      return "⚠️ too-short";
     }
     if(characters > this.maxCharacters) {
-      return "too-long";
+      return "⚠️ too-long";
     }
-    return "ok"
+    return "👍 ok"
   }
 }

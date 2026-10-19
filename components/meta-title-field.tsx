@@ -22,8 +22,7 @@ export default function MetaTitleField() {
         className="py-2 px-4 rounded-full border border-solid  transition-colors hover:b"
       />
       <p className="text-sm">
-        {lengthCheck.characters} / {maxCharacters} characters
-        {lengthCheck.characters > maxCharacters && " " + lengthCheck.status}
+        {lengthCheck.characters} / {maxCharacters} characters { " | " + lengthCheck.status}
       </p>
     </div>
   );
