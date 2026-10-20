@@ -1,12 +1,30 @@
 'use client'
 
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 
 export default function ImageSelectionForm() {
   const [imageUrlInputValue, setImageUrlInputValue] = useState('')
 
+  async function handleSubmit(event: React.SubmitEvent<HTMLFormElement>) {
+    event.preventDefault()
+
+    const response = await fetch('/api/optimize-image', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        imageUrlInputValue,
+      }),
+    })
+
+    if (!response.ok) {
+      const data
+    }
+  }
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <div className="flex flex-col gap-3">
         <input
           type="text"
@@ -16,7 +34,7 @@ export default function ImageSelectionForm() {
           autoComplete="off"
           value={imageUrlInputValue}
           className="py-2 px-4 rounded-full border border-solid  transition-colors hover:b"
-          onChange={(e) => setImageUrlInputValue(e.target.value)}
+          onChange={(event) => setImageUrlInputValue(event.target.value)}
         />
         <h3>or</h3>
         <div className="flex">

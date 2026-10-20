@@ -12,7 +12,8 @@ Web Content Optimizer makes it easy for you to turn images and text into web-rea
 
 - R1.1 Select a jpeg image from a valid url
 - R1.2 Choose max file size of compressed image
-- R1.2 Possibility to download the compressed image
+- R1.3 Possibility to download the compressed image
+- R1.4 Choose name of the output image
 
 #### Text
 
@@ -56,6 +57,8 @@ Web Content Optimizer makes it easy for you to turn images and text into web-rea
 ```bash
 npm install
 ```
+
+The app has a default upload
 
 ### Run the app
 
