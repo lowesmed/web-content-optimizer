@@ -15,6 +15,7 @@
   "dependencies": {
     "glyphalyze": "github:Twodrop/glyphalyze",
     "next": "16.4.0",
+    "optipic": "github:lowesmed/1dv610-module-ts",
     "react": "19.3.0",
     "react-dom": "19.3.0"
   },
