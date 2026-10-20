@@ -1,10 +1,9 @@
-"use client"
+'use client'
 
-import { useState } from "react";
+import { useState } from 'react'
 
 export default function ImageSelectionForm() {
-
-  const [imageUrlInputValue, setImageUrlInputValue] = useState("");
+  const [imageUrlInputValue, setImageUrlInputValue] = useState('')
 
   return (
     <form>
@@ -22,21 +21,14 @@ export default function ImageSelectionForm() {
         <h3>or</h3>
         <div className="flex">
           <div>
-            <button
-              className="p-3 bg-amber-600 text-white font-bold rounded-full cursor-pointer"
-            >
-              Upload
-            </button>
+            <button className="p-3 bg-amber-600 text-white font-bold rounded-full cursor-pointer">Upload</button>
           </div>
           <div></div>
         </div>
-        <button
-          className="p-2 bg-green-600 text-white font-bold rounded-full cursor-pointer"
-          type="submit"
-        >
+        <button className="p-2 bg-green-600 text-white font-bold rounded-full cursor-pointer" type="submit">
           Generate
         </button>
       </div>
     </form>
-  );
+  )
 }
