@@ -14,7 +14,7 @@ export default function TextCheckerField({ textKind }: MetaTitleFieldProps) {
 
   const lengthChecker = useMemo(() => new TextLengthChecker(textKind), [textKind])
   const wordOccursChecker = useMemo(() => new TextWordOccursChecker(textKind), [textKind])
-  
+
   const lengthCheck = lengthChecker.check(text)
   const wordOccursCheck = wordOccursChecker.check(text, pageName)
 
@@ -30,7 +30,7 @@ export default function TextCheckerField({ textKind }: MetaTitleFieldProps) {
             id="pageName"
             value={pageName}
             onChange={(event) => setPageName(event.target.value)}
-            placeholder="Enter the name of page. Eg: /about"
+            placeholder="Name of page. Eg: /about"
             autoComplete="off"
             className="py-2 px-4 rounded-full border border-solid  transition-colors"
           />
