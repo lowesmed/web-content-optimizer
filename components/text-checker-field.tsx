@@ -12,11 +12,11 @@ export default function TextCheckerField({ textKind }: MetaTitleFieldProps) {
   const [text, setText] = useState('')
   const [pageName, setPageName] = useState('')
 
-  const lengthCheck = useMemo(() => new TextLengthChecker(textKind).check(text), [textKind, text])
-  const wordOccursCheck = useMemo(
-    () => new TextWordOccursChecker(textKind).check(text, pageName),
-    [textKind, text, pageName]
-  )
+  const lengthChecker = useMemo(() => new TextLengthChecker(textKind), [textKind])
+  const wordOccursChecker = useMemo(() => new TextWordOccursChecker(textKind), [textKind])
+  
+  const lengthCheck = lengthChecker.check(text)
+  const wordOccursCheck = wordOccursChecker.check(text, pageName)
 
   return (
     <div className="flex flex-col gap-3">
