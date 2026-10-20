@@ -1,9 +1,6 @@
 import { TextKind } from "@/domain/TextKindCatalog";
 import { TextCounter } from "glyphalyze";
 
-/**
- * Types of statuses used for different text lengths.
- */
 export type LengthStatus = "👍 ok" | "⚠️ too-short" | "⚠️ too-long"
 
 export interface LengthCheck {

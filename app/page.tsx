@@ -20,6 +20,7 @@ export default function Home() {
       <h2 className="text-2xl font-bold">Text</h2>
       <TextCheckerField textKind={textKindCatalog.find("meta-title")}/>
       <TextCheckerField textKind={textKindCatalog.find("meta-description")}/>
+      <TextCheckerField textKind={textKindCatalog.find("h1-heading")}/>
     </div>
   );
 }
