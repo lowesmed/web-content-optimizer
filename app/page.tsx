@@ -13,7 +13,6 @@ export default function Home() {
         <li>• Make images smaller in file size and dimension</li>
         <li>• Create SEO optimized meta titles for webpages</li>
       </ul>
-      <p className="text-sm">More features are being added frequently.</p>
       <h2 className="text-2xl font-bold">Images</h2>
       <ImageSelectionForm />
       <h2 className="text-2xl font-bold">Text</h2>
