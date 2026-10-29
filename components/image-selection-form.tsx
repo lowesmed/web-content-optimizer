@@ -6,7 +6,7 @@ import ImageMaxSizeInput from '@/components/image-max-size-input'
 
 export default function ImageSelectionForm() {
   const [imageUrlInputValue, setImageUrlInputValue] = useState('')
-  const [imageMaxSizeValue, setImageMaxSizeValue] = useState('')
+  const [imageMaxSizeValue, setImageMaxSizeValue] = useState('400')
 
   const [resultUrl, setResultUrl] = useState<string | null>(null)
   const [error, setError] = useState<string | null>(null)
@@ -44,17 +44,21 @@ export default function ImageSelectionForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="flex flex-col gap-3">
-        <input
-          type="text"
-          name="imageUrl"
-          id="imageUrl"
-          placeholder="Enter a image URL"
-          autoComplete="off"
-          value={imageUrlInputValue}
-          className="py-2 px-4 rounded-full border border-solid  transition-colors hover:b"
-          onChange={(event) => setImageUrlInputValue(event.target.value)}
-        />
+      <div className="flex flex-col gap-8">
+        <div className='flex flex-col gap-3'>
+          <h3 className="font-bold">Image URL</h3>
+          <p>Enter a URL to an image. The image must be in jpg/jpeg format.</p>
+          <input
+            type="text"
+            name="imageUrl"
+            id="imageUrl"
+            placeholder="https://..."
+            autoComplete="off"
+            value={imageUrlInputValue}
+            className="py-2 px-4 rounded-full border border-solid  transition-colors hover:b"
+            onChange={(event) => setImageUrlInputValue(event.target.value)}
+          />
+        </div>
         <ImageMaxSizeInput
           value={imageMaxSizeValue}
           onValueChange={setImageMaxSizeValue}

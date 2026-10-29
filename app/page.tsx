@@ -15,6 +15,7 @@ export default function Home() {
       </ul>
       <h2 className="text-2xl font-bold">Images</h2>
       <ImageSelectionForm />
+      <hr className='m-6 text-gray-400' />
       <h2 className="text-2xl font-bold">Text</h2>
       <TextCheckerField textKind={textKindCatalog.find('meta-title')} />
       <TextCheckerField textKind={textKindCatalog.find('meta-description')} />
