@@ -2,12 +2,21 @@
 
 import Image from 'next/image'
 import { useState } from 'react'
+import ImageMaxSizeInput from '@/components/image-max-size-input'
 
 export default function ImageSelectionForm() {
   const [imageUrlInputValue, setImageUrlInputValue] = useState('')
+  const [imageMaxSizeValue, setImageMaxSizeValue] = useState('')
+
   const [resultUrl, setResultUrl] = useState<string | null>(null)
   const [error, setError] = useState<string | null>(null)
 
+  /**
+   * Input values are sent to the API for image processing. The response is converted to a Blob URL needed for displaying the processed image.
+   *
+   * @param event - A submitted form event
+   * @returns
+   */
   async function handleSubmit(event: React.SubmitEvent<HTMLFormElement>) {
     event.preventDefault()
 
@@ -17,7 +26,8 @@ export default function ImageSelectionForm() {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        imageUrl: imageUrlInputValue
+        imageUrl: imageUrlInputValue,
+        maxSize: Number(imageMaxSizeValue),
       }),
     })
 
@@ -45,19 +55,20 @@ export default function ImageSelectionForm() {
           className="py-2 px-4 rounded-full border border-solid  transition-colors hover:b"
           onChange={(event) => setImageUrlInputValue(event.target.value)}
         />
+        <ImageMaxSizeInput
+          value={imageMaxSizeValue}
+          onValueChange={setImageMaxSizeValue}
+        />
         <button className="p-2 bg-green-600 text-white font-bold rounded-full cursor-pointer" type="submit">
           Generate
         </button>
-        {error && <p role='alert'>{error}</p>}
+        {error && <p role="alert">{error}</p>}
         {resultUrl && (
           <div>
-            <Image 
-              src={resultUrl}
-              width={1200}
-              height={1200}
-              alt='Result of compressed image'
-            />
-            <a href={resultUrl} download='compressed.jpg'>Download</a>
+            <Image src={resultUrl} width={1200} height={1200} alt="Result of compressed image" />
+            <a href={resultUrl} download="compressed.jpg">
+              Download
+            </a>
           </div>
         )}
       </div>
