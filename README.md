@@ -14,6 +14,7 @@ Web Content Optimizer makes it easy for you to turn images and text into web-rea
 - R1.2 Choose max file size of compressed image
 - R1.3 Possibility to download the compressed image
 - R1.4 Choose name of the output image
+- R1.5 Get a message if image couldn't compress
 
 #### Text
 
@@ -23,7 +24,7 @@ Web Content Optimizer makes it easy for you to turn images and text into web-rea
   - Get feedback when too short/ok/too long
 - R2.3 Create a optimized page heading (H1)
   - 20-70 characters
-  - Includes page name
+  - Shall includes page name
 
 ## Table of contents
 
@@ -57,8 +58,6 @@ Web Content Optimizer makes it easy for you to turn images and text into web-rea
 ```bash
 npm install
 ```
-
-The app has a default upload
 
 ### Run the app
 
