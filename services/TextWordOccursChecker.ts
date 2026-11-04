@@ -28,7 +28,7 @@ export class TextWordOccursChecker {
   }
 
   /**
-   * Get status based on min/max character length.
+   * Return status based on character length.
    *
    * @param characters - Numbers of characters
    * @returns

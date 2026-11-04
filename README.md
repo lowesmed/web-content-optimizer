@@ -11,10 +11,11 @@ Web Content Optimizer makes it easy for you to turn images and text into web-rea
 #### Images
 
 - R1.1 Select a jpeg image from a valid url
-- R1.2 Choose max file size of compressed image
-- R1.3 Possibility to download the compressed image
-- R1.4 Choose name of the output image
-- R1.5 Get a message if image couldn't compress
+- R1.2 Choose a max file size of the compressed image
+- R1.3 Choose name of the output image
+- R1.4 Get a message if image couldn't compress
+- R1.5 Generate 3 variants of the image with different widths
+- R1.6 Be able to download the compressed image(s)
 
 #### Text
 

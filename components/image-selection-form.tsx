@@ -64,7 +64,7 @@ export default function ImageSelectionForm() {
           onValueChange={setImageMaxSizeValue}
         />
         <button className="p-2 bg-green-600 text-white font-bold rounded-full cursor-pointer" type="submit">
-          Generate
+          Optimize
         </button>
         {error && <p role="alert">{error}</p>}
         {resultUrl && (

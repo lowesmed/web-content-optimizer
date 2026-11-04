@@ -30,11 +30,10 @@ export default function TextCheckerField({ textKind }: MetaTitleFieldProps) {
             id="pageName"
             value={pageName}
             onChange={(event) => setPageName(event.target.value)}
-            placeholder="Name of page. Eg: /about"
+            placeholder="Page title"
             autoComplete="off"
             className="py-2 px-4 rounded-full border border-solid  transition-colors"
           />
-          <p className="text-sm">{wordOccursCheck.status}</p>
         </div>
       )}
       <input
@@ -48,7 +47,7 @@ export default function TextCheckerField({ textKind }: MetaTitleFieldProps) {
         className="py-2 px-4 rounded-full border border-solid  transition-colors"
       />
       <p className="text-sm">
-        {lengthCheck.characters} / {textKind.maxCharacters} characters {' | ' + lengthCheck.status}
+        {lengthCheck.characters} / {textKind.maxCharacters} characters {' - ' + lengthCheck.status} {textKind.timesWordOccurs !== undefined && (`| Page title - ${wordOccursCheck.status}`)}
       </p>
     </div>
   )
