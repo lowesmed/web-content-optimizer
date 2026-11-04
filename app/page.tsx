@@ -1,12 +1,20 @@
 import ImageSelectionForm from '@/components/image-selection-form'
 import TextCheckerField from '@/components/text-checker-field'
 import { TextKindCatalog } from '@/domain/TextKindCatalog'
+import Image from 'next/image'
 
 export default function Home() {
   const textKindCatalog = new TextKindCatalog()
 
   return (
     <div className="flex flex-col gap-6">
+      <Image 
+        src="/web-content-optimizer-logo.jpg"
+        width={200}
+        height={400}
+        alt="Web Content Optimizer logo"
+      />
+
       <h1 className="text-3xl font-bold">Web Content Optimizer</h1>
       <p>This app helps you optimize images and text for different web usage. You can:</p>
       <ul>
