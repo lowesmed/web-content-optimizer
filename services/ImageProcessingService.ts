@@ -5,9 +5,7 @@ export class ImageProcessingService {
   async createVariant(imageUrl: string, maxSize: number): Promise<Buffer> {
     const optiPic = new OptiPic()
     await this.load(optiPic, imageUrl)
-    if (maxSize === 0) {
-      return optiPic.compressToBuffer()
-    }
+
     return optiPic.compressToBuffer({ maxSizeKB: maxSize })
   }
 

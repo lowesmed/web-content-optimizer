@@ -7,11 +7,7 @@ export const MIN_SIZE_KB = 60
 export const MAX_SIZE_KB = 800
 export const DEFAULT_SIZE_KB = 400
 
-/**
- * Makes it possible to choose a custom maximum file size of the image.
- * Min value is set 60(Kb) to not make compression to heavy.
- * Max value is set to 800(Kb) because no web image should be exceeding that.
- */
+/** Lets the user choose a maximum file size for the optimized image. */
 export default function ImageMaxSizeInput({ value, onValueChange }: ImageMaxSizeInputProps) {
   return (
     <div className="flex flex-col gap-1 bg-gray-50 p-6 border border-solid rounded-2xl">
