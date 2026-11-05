@@ -45,6 +45,7 @@ export default function ImageSelectionForm() {
       setResultUrl(null)
       setError('Could not reach the server. Check your connection and try again.')
     }
+  }
 
   return (
     <form onSubmit={handleSubmit}>
@@ -59,7 +60,7 @@ export default function ImageSelectionForm() {
             placeholder="https://..."
             autoComplete="off"
             value={imageUrlInputValue}
-            className="py-2 px-4 rounded-full border border-solid  transition-colors"
+            className="py-2 px-4 rounded-full border border-solid  transition-colors hover:b"
             onChange={(event) => setImageUrlInputValue(event.target.value)}
           />
         </div>

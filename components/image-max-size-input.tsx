@@ -3,6 +3,10 @@ type ImageMaxSizeInputProps = {
   onValueChange: (value: string) => void
 }
 
+export const MIN_SIZE_KB = 60
+export const MAX_SIZE_KB = 800
+export const DEFAULT_SIZE_KB = 400
+
 /**
  * Makes it possible to choose a custom maximum file size of the image.
  * Min value is set 60(Kb) to not make compression to heavy.
@@ -22,8 +26,8 @@ export default function ImageMaxSizeInput({ value, onValueChange }: ImageMaxSize
           type="range"
           name="imageMaxSizeNum"
           id="imageMaxSizeNum"
-          min="60"
-          max="800"
+          min={MIN_SIZE_KB}
+          max={MAX_SIZE_KB}
           step="10"
           value={value}
           onChange={(event) => onValueChange(event.target.value)}
@@ -33,7 +37,7 @@ export default function ImageMaxSizeInput({ value, onValueChange }: ImageMaxSize
           <output htmlFor="imageMaxSizeNum">{value}</output> KB
         </p>
       </div>
-      <p className="text-sm">Default: 400</p>
+      <p className="text-sm">Default: {DEFAULT_SIZE_KB} KB</p>
     </div>
   )
 }
