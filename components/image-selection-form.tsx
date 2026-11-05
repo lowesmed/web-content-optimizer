@@ -20,32 +20,36 @@ export default function ImageSelectionForm() {
   async function handleSubmit(event: React.SubmitEvent<HTMLFormElement>) {
     event.preventDefault()
 
-    const response = await fetch('/api/optimize-image', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        imageUrl: imageUrlInputValue,
-        maxSize: Number(imageMaxSizeValue),
-      }),
-    })
+    try {
+      const response = await fetch('/api/optimize-image', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          imageUrl: imageUrlInputValue,
+          maxSize: Number(imageMaxSizeValue),
+        }),
+      })
 
-    if (!response.ok) {
-      const data = await response.json()
+      if (!response.ok) {
+        const data = await response.json()
+        setResultUrl(null)
+        setError(data.error)
+        return
+      }
+
+      setError(null)
+      setResultUrl(URL.createObjectURL(await response.blob()))
+    } catch {
       setResultUrl(null)
-      setError(data.error)
-      return
+      setError('Could not reach the server. Check your connection and try again.')
     }
-
-    setError(null)
-    setResultUrl(URL.createObjectURL(await response.blob()))
-  }
 
   return (
     <form onSubmit={handleSubmit}>
       <div className="flex flex-col gap-8">
-        <div className='flex flex-col gap-3'>
+        <div className="flex flex-col gap-3">
           <h3 className="font-bold">Image URL</h3>
           <p>Enter a URL to an image. The image must be in jpg/jpeg format.</p>
           <input
@@ -55,14 +59,11 @@ export default function ImageSelectionForm() {
             placeholder="https://..."
             autoComplete="off"
             value={imageUrlInputValue}
-            className="py-2 px-4 rounded-full border border-solid  transition-colors hover:b"
+            className="py-2 px-4 rounded-full border border-solid  transition-colors"
             onChange={(event) => setImageUrlInputValue(event.target.value)}
           />
         </div>
-        <ImageMaxSizeInput
-          value={imageMaxSizeValue}
-          onValueChange={setImageMaxSizeValue}
-        />
+        <ImageMaxSizeInput value={imageMaxSizeValue} onValueChange={setImageMaxSizeValue} />
         <button className="p-2 bg-green-600 text-white font-bold rounded-full cursor-pointer" type="submit">
           Optimize
         </button>

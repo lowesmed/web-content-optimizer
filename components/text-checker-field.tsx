@@ -4,11 +4,11 @@ import { TextKind } from '@/domain/TextKindCatalog'
 import { useMemo, useState } from 'react'
 import { TextWordOccursChecker } from '@/services/TextWordOccursChecker'
 
-interface MetaTitleFieldProps {
+interface TextCheckerFieldProps {
   textKind: TextKind
 }
 
-export default function TextCheckerField({ textKind }: MetaTitleFieldProps) {
+export default function TextCheckerField({ textKind }: TextCheckerFieldProps) {
   const [text, setText] = useState('')
   const [pageName, setPageName] = useState('')
 
@@ -47,7 +47,8 @@ export default function TextCheckerField({ textKind }: MetaTitleFieldProps) {
         className="py-2 px-4 rounded-full border border-solid  transition-colors"
       />
       <p className="text-sm">
-        {lengthCheck.characters} / {textKind.maxCharacters} characters {' - ' + lengthCheck.status} {textKind.mustContainPageTitle && (`| Page title - ${wordOccursCheck.status}`)}
+        {lengthCheck.characters} / {textKind.maxCharacters} characters {' - ' + lengthCheck.status}{' '}
+        {textKind.mustContainPageTitle && `| Page title - ${wordOccursCheck.status}`}
       </p>
     </div>
   )

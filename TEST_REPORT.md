@@ -12,17 +12,15 @@ Answer: The application has been tested both manually and through automatic test
 
 - **Automatic testing** has ben run on the same local development environment has the manual testing. The tests are built using Vitest, running the script `npm run test` in the project folder. Outcome will bre presented in the terminal upon test run.
 
-
-
 ## Test Results
 
-| Test case | Requirement | Input | Expected outcome | Actual outcome |
-| --------- | ----------- | ----- | ---------------- | -------------- |
-| A url to an JPEG image can be used in the form | R 1.1 | A URL to an image (https://images.pexels.com/photos/40409863/pexels-photo-40409863.jpeg) in the "Image url" input text field. | When clicking Generate the url image will get compressed. | ✅ As expected. |
-|           |             |       |                  |                |
-|           |             |       |                  |                |
-|           |             |       |                  |                |
-|           |             |       |                  |                |
+| Test case                                      | Requirement | Input                                                                                                                         | Expected outcome                                          | Actual outcome  |
+| ---------------------------------------------- | ----------- | ----------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------- | --------------- |
+| A url to an JPEG image can be used in the form | R 1.1       | A URL to an image (https://images.pexels.com/photos/40409863/pexels-photo-40409863.jpeg) in the "Image url" input text field. | When clicking Generate the url image will get compressed. | ✅ As expected. |
+|                                                |             |                                                                                                                               |                                                           |                 |
+|                                                |             |                                                                                                                               |                                                           |                 |
+|                                                |             |                                                                                                                               |                                                           |                 |
+|                                                |             |                                                                                                                               |                                                           |                 |
 
 ## Known Issues in Third-Party Modules
 

@@ -24,7 +24,7 @@ export class TextLengthChecker {
     if (characters < this.textKind.minCharacters) {
       return '⚠️ too-short'
     }
-    if (characters > this.textKind.maxCharacters) { 
+    if (characters > this.textKind.maxCharacters) {
       return '⚠️ too-long'
     }
     return '👍 ok'

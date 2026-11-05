@@ -26,7 +26,8 @@ export class TextKindCatalog {
     {
       id: 'h1-heading',
       label: 'H1 heading',
-      description: 'A short text used as a heading on top of your page. It describes what the page is about and it needs to include the title of the page.',
+      description:
+        'A short text used as a heading on top of your page. It describes what the page is about and it needs to include the title of the page.',
       minCharacters: 12,
       maxCharacters: 40,
       mustContainPageTitle: true,

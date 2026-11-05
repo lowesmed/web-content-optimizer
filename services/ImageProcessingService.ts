@@ -8,14 +8,14 @@ export class ImageProcessingService {
     if (maxSize === 0) {
       return optiPic.compressToBuffer()
     }
-    return optiPic.compressToBuffer({ maxSizeKB: maxSize})
+    return optiPic.compressToBuffer({ maxSizeKB: maxSize })
   }
 
   private async load(optiPic: OptiPic, imageUrl: string): Promise<void> {
     try {
       await optiPic.load(imageUrl)
     } catch {
-      throw new InvalidInputError(`Can't load a. JPEG image from the URL`)
+      throw new InvalidInputError(`Can't load a JPEG image from the URL.`)
     }
   }
 }

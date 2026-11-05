@@ -54,7 +54,7 @@ export class ImageController {
    */
   private parseImageUrl(body: Record<string, unknown>): string {
     const { imageUrl } = body
-    
+
     if (typeof imageUrl !== 'string') {
       throw new InvalidInputError('imageUrl must be a string')
     }
