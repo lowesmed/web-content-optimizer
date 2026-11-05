@@ -1,4 +1,3 @@
-import { TextKind } from '@/domain/TextKindCatalog'
 import { TextCounter } from 'glyphalyze'
 
 export type OccursStatus = 'occur' | 'dont-occur' | 'recurs'
@@ -10,8 +9,6 @@ export interface WordOccursCheck {
 }
 
 export class TextWordOccursChecker {
-  constructor(private readonly textKind: TextKind) {}
-
   check(text: string, pageName: string): WordOccursCheck {
     const wordsInText = new TextCounter(text).wordFrequency()
 
@@ -27,12 +24,6 @@ export class TextWordOccursChecker {
     }
   }
 
-  /**
-   * Return status based on character length.
-   *
-   * @param characters - Numbers of characters
-   * @returns
-   */
   private getStatus(numberOfTimes: number): OccursStatus {
     if (numberOfTimes < 1) {
       return 'dont-occur'

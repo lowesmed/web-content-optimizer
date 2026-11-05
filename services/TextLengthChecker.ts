@@ -20,17 +20,11 @@ export class TextLengthChecker {
     }
   }
 
-  /**
-   * Get status based on min/max character length.
-   *
-   * @param characters - Numbers of characters
-   * @returns
-   */
   private getStatus(characters: number): LengthStatus {
     if (characters < this.textKind.minCharacters) {
       return '⚠️ too-short'
     }
-    if (characters > this.textKind.maxCharacters) {
+    if (characters > this.textKind.maxCharacters) { 
       return '⚠️ too-long'
     }
     return '👍 ok'

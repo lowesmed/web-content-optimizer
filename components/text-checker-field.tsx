@@ -13,7 +13,7 @@ export default function TextCheckerField({ textKind }: MetaTitleFieldProps) {
   const [pageName, setPageName] = useState('')
 
   const lengthChecker = useMemo(() => new TextLengthChecker(textKind), [textKind])
-  const wordOccursChecker = useMemo(() => new TextWordOccursChecker(textKind), [textKind])
+  const wordOccursChecker = useMemo(() => new TextWordOccursChecker(), [])
 
   const lengthCheck = lengthChecker.check(text)
   const wordOccursCheck = wordOccursChecker.check(text, pageName)
@@ -22,7 +22,7 @@ export default function TextCheckerField({ textKind }: MetaTitleFieldProps) {
     <div className="flex flex-col gap-3">
       <h3 className="font-bold">{textKind.label || 'Text to optimize'}</h3>
       <p>{textKind.description}</p>
-      {textKind.timesWordOccurs !== undefined && (
+      {textKind.mustContainPageTitle && (
         <div>
           <input
             type="text"
@@ -47,7 +47,7 @@ export default function TextCheckerField({ textKind }: MetaTitleFieldProps) {
         className="py-2 px-4 rounded-full border border-solid  transition-colors"
       />
       <p className="text-sm">
-        {lengthCheck.characters} / {textKind.maxCharacters} characters {' - ' + lengthCheck.status} {textKind.timesWordOccurs !== undefined && (`| Page title - ${wordOccursCheck.status}`)}
+        {lengthCheck.characters} / {textKind.maxCharacters} characters {' - ' + lengthCheck.status} {textKind.mustContainPageTitle && (`| Page title - ${wordOccursCheck.status}`)}
       </p>
     </div>
   )

@@ -10,22 +10,23 @@ Web Content Optimizer makes it easy for you to turn images and text into web-rea
 
 #### Images
 
-- R1.1 Select a jpeg image from a valid url
+- R1.1 Select a JPEG image from a valid url
 - R1.2 Choose a max file size of the compressed image
 - R1.3 Choose name of the output image
-- R1.4 Get a message if image couldn't compress
+- R1.4 Get a message if the image couldn't be compressed
 - R1.5 Generate 3 variants of the image with different widths
-- R1.6 Be able to download the compressed image(s)
+- R1.6 Download the compressed images
 
 #### Text
 
-- R2.1 Create a not to long meta title (max 60 characters)
+- R2.1 Create a meta title (30-80 characters)
   - Get feedback when too short/ok/too long
-- R2.2 Create a not to long meta description (max 160 characters)
+- R2.2 Create a meta description (60-120 characters)
   - Get feedback when too short/ok/too long
-- R2.3 Create a optimized page heading (H1)
-  - 20-70 characters
-  - Shall includes page name
+- R2.3 Create an H1 heading (12-40 characters)
+  - Get feedback when too short/ok/too long
+  - Get feedback on whether the page title occurs in heading once, never or more than once
+  - (Known limit: only single-word page titles are matched)
 
 ## Table of contents
 
@@ -38,15 +39,14 @@ Web Content Optimizer makes it easy for you to turn images and text into web-rea
 
 ### Images
 
-- **Files & URLs:** Load images stored locally or online.
-- **Size limit:** Set a maximum file size in KB.
-- **Resizing:** Set the output width in pixels.
-- **Sensible defaults:** Width 1200 px and max size 400 KB unless you say otherwise.
+- **Image URL** Load a JPEG from an URL.
+- **Size limit:** Choose a maximum file size between 60-800 KB (default 400KB).
+- **Download:** Download the compress images.
 
 ### Text
 
-- **Meta title:** Make sure your meta title is the correct length
-- **Meta description:** Make sure your meta description is the correct length
+- **Meta title, meta description and H1 heading:** Live feedback on length.
+- **Page title check:** Checks that the page title occurs in the H1 heading.
 
 ## Getting Started
 
@@ -74,14 +74,18 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to test ou
 
 ```text
 web-content-optimizer
-├─ app                                # Pages & layouts
-├─ components                         # Reusable components
-├── public                            # Public resources
-├─  services                          # App logic using the modules
-├── package.json                      # Scripts and dependencies
-├── tsconfig.json                     # TypeScript config (strict mode)
-├── vitest.config.mts                 # Vitest tests config
-├── TEST_REPORT.md                    # Test report
+├─ app                                # Pages, layouts & API routes
+├─ components                         # UI components
+├─ controllers                        # Handles HTTP requests into service calls
+├─ domain                             # Domain types, rules & errors
+├─ services                           # App logic using the modules
+├─ tests                              # Vitest tests
+├─ public                             # Public resources (images etc)
+├─ services                           # App logic using the modules
+├─ package.json                       # Scripts & dependencies
+├─ tsconfig.json                      # TypeScript config (strict mode)
+├─ vitest.config.mts                  # Vitest config
+├─ TEST_REPORT.md                     # Test report
 └── LICENSE                           # Unlicense (public domain)
 ```
 

@@ -4,8 +4,7 @@ export interface TextKind {
   readonly description: string
   readonly minCharacters: number
   readonly maxCharacters: number
-  readonly timesWordOccurs?: number
-  readonly words?: number
+  readonly mustContainPageTitle?: boolean
 }
 
 export class TextKindCatalog {
@@ -30,7 +29,7 @@ export class TextKindCatalog {
       description: 'A short text used as a heading on top of your page. It describes what the page is about and it needs to include the title of the page.',
       minCharacters: 12,
       maxCharacters: 40,
-      timesWordOccurs: 1,
+      mustContainPageTitle: true,
     },
   ]
 
